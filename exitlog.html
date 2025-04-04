@@ -1,0 +1,42 @@
+<!-- mugshot.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mugshot</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: white;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            text-align: center;
+        }
+        .name {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .reason {
+            font-size: 18px;
+            margin-top: 10px;
+        }
+        .quit-time {
+            font-size: 14px;
+            margin-top: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="name" id="playerName"></div>
+    <div class="reason" id="reason"></div>
+    <div class="quit-time" id="quitTime"></div>
+
+    <script>
+        const params = new URLSearchParams(window.location.search);
+        document.getElementById("playerName").innerText = params.get("name");
+        document.getElementById("reason").innerText = params.get("reason");
+        document.getElementById("quitTime").innerText = "Quit Time: " + params.get("time");
+    </script>
+</body>
+</html>
